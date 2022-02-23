@@ -1,18 +1,19 @@
 function quizApp(title, options, correctAnswerIndex){
   let player = {};
-  title: title;
-  options: options;
-  correctAnswerIndex: correctAnswerIndex;
+  player.title = title;
+  player.options = options;
+  player.correctAnswerIndex = correctAnswerIndex;
   player.isAnswerCorrenct = function (value) {
-    this.correctAnswerIndex == value;
-  }
-  player.getCorrectAnswer = function (){
-    return  this.options[index] == this.correctAnswerIndex; 
-  }
+    return value === this.correctAnswerIndex;
+  };
+  player.getCorrectAnswer = function() {
+    return this.options[this.correctAnswerIndex]; 
+  };
+  return player;
 }
 
-let player1 = quizApp ({
-  title: 'Where is the capital of Jordan',
-  options: ['Tashkent', 'Amaan', 'Kuwait City', 'Nairobi'],
-  correctAnswerIndex: 1,
-});
+const fq = quizApp(
+  'Where is the capital of Jordan',
+  ['Tashkent', 'Amaan', 'Kuwait City', 'Nairobi'],
+  1,
+);
