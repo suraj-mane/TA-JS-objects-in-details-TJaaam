@@ -5,7 +5,7 @@ class Question {
     this.correctAnswerIndex = correctAnswerIndex;
   }
   isAnswerCorrect(value){
-    return this.options === this.value;
+    return this.options === value;
   }
   getCorrectAnswer(){
     return this.options[this.correctAnswerIndex];
