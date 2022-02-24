@@ -18,6 +18,21 @@
 
 - Check the `isEqual` method and pass the two instance you created above.
 
+class Square {
+  constructor(side);{
+  this.width = side;
+  this.height = side;
+  }
+  description(){
+    alert('The square is ${this.width} x ${this.height}');
+  }
+  calcArea (){
+    let _area = this.width * this.width;
+  }
+  get area (){
+  }
+}
+
 ## User Class
 
 - Create a class named `User` that accepts `firstName` and `lastName` property
@@ -37,3 +52,28 @@
 - Check the `fullName` using getter
 
 - Check the `nameContains` method
+
+
+class User {
+  constructor(firstname,lastname){
+    this.firstname = firstname;
+    this.lastname = lastname;
+  }
+  get fullname (){
+    let fullname = this.firstname + " "+ this.lastname;
+    return fullname;
+  }
+  set fullname (fname,lname) {
+    return if(fname.length < 5 && lname.length < 5){
+            this.firstname = fname;
+            this.lastname = lname;
+    } 
+  }
+  nameContains() {
+    if(typeOf(this.firstname) === string){
+      return;
+    }
+  }
+} 
+
+let name = new User("suraj", "Mane");
