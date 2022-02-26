@@ -11,30 +11,33 @@ let CreateAnimal = {
 }
 
 let CreateDog = {
-  brek: function() {
+  brek() {
     return `I am ${this.name} and I can bark 🐶`;
   },
-  changeName: function(newName) {
+  changeName(newName) {
     return this.name = newName;
   },
-  changeColor: function(newColor) {
+  changeColor(newColor) {
     return this.color = newColor;
   },
-  summery: function () {
+  summery() {
     return `I am ${this.name} and I am of ${this.color} color. I can also bark`;
   },
 };
 
+Object.setPrototypeOf(CreateDog, CreateAnimal);
+
 let CreateCat = {
-  meow: function(){
+  meow(){
     return `I am ${this.name} and I can do mewo meow 😹`
   },
-  changeColorOfEyes: function(newColor){
+  changeColorOfEye(newColor){
     this.color = newColor;
+    return this.color;
   }
 };
 
-Object.setPrototypeOf(CreateDog, CreateCat);
+Object.setPrototypeOf(CreateCat, CreateAnimal);
 
 function animal(loction, numberOfLegs){
   let user = Object.create(CreateAnimal);
@@ -43,19 +46,18 @@ function animal(loction, numberOfLegs){
   return user;
 }
 
-function dog(name, color){
-  let user = Object.create(CreateDog);
+function dog(location, numberOfLegs, name, color){
+  let user = animal(location, numberOfLegs);
+  Object.setPrototypeOf(user, CreateDog);
   user.name = name;
   user.color = color;
   return user;
 }
 
-function cat(name, color){
-  let user = Object.create(CreateCat);
+function cat(location, numberOfLegs, name, color){
+  let user = animal(location, numberOfLegs);
+  Object.setPrototypeOf(user, CreateCat);
   user.name = name;
-  user.color = color;
+  user.colorOfEye = color;
   return user;
 }
-
-let animal1 = new dog('moon', 'black');
-let animal2 = new cat('mo', 'white');
