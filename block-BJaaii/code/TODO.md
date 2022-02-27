@@ -30,9 +30,40 @@ Getter
 #### Test
 
 ```js
+
+class Stack {
+  constructor() {
+    this.items = [];
+  }
+  push(element){
+    this.items.push(element);
+  }
+  pop() {
+    if(this.items.length == 0){
+      return "Underflow"
+    }
+    this.items.pop();
+  }
+  peek(){
+    return this.items[this.items.length - 1];
+  }
+  reverse(){
+    return this.items.reverse();
+  }
+  isEmpty(){
+    return this.items.length == 0;
+  }
+  displayStack(){
+    return this.items;
+  }
+  get length() {
+    return this.items.length;
+  }
+}
+
 let myStack = new Stack();
-myStack.push('One');
-myStack.push('Two');
+myStack.push("one");
+myStack.push("Two");
 console.log(myStack.length); // 2
 console.log(myStack.peek()); // "Two"
 console.log(myStack.peek(0)); // "One"
@@ -67,6 +98,31 @@ Getter
 #### Test
 
 ```js
+
+class Queue {
+  constructor() {
+    this.items = [];
+  }
+  enqueue(element){
+    this.items.push(element);
+  }
+  dequeue(){
+    this.items.shift();
+  }
+  peek(ele = 0){
+    return this.items[ele];
+  }
+  isEmpty(){
+    return this.items.length == 0;
+  }
+  displayQueue(){
+    return this.items;
+  }
+  get length(){
+    return this.items.length; 
+  }
+}
+
 let atmQueue = new Queue();
 atmQueue.enqueue('Aman');
 atmQueue.enqueue('John');
