@@ -16,16 +16,15 @@ Book class will have the following methods:
 - `markBookAsRead` when called will change the `isRead` property on the book to be `true`. It will also change the `finishedDate` to be the `Date.now()` when this function is called.
 
 class BookList {
-  constructor(Title, Category, Author, isRead, finishedDate){
+  constructor(Title, Category, Author){
     this.Title = Title;
     this.Category = Category;
     this.Author = Author;
-    this.isRead = isRead;
-    this.finishedDate = finishedDate;
+    this.isRead = false;
+    this.finishedDate = null;
   }
   markBookAsRead() {
-    if(isRead === true){
-      return 
+      this.isRead = true;
     }
   }
 }
@@ -36,26 +35,28 @@ class BookList {
 2. Current read book index
 
 class Book  extends Booklist{
-  constructor(Title, Category, Author, isRead, finishedDate,array, cindex) {
-    super(Title, Category, Author, isRead, finishedDate);
-    this.array = array;
-    this.cindex = cindex;
+  constructor() {
+    this.books = [];
+    this.currentIndex = 0;
   }
-  add(){
-    return `Book will added to the list`;
+  add(books = []){
+    this.books = this.book.push(books);
+    return this.books;
   }
   getCurrentBook(){
-    return `${array[this.cindex]}`;
+    return this.books[this.currentindex];
   }
   getNextBook(){
-    return `${array[this.cindex]+1}`;
+    this.currentindex = this.currentindex + 1;
+    return this.book[this.currentindex];
   }
   getPrevBook(){
-    return `${array[this.cindex]+1}`;
+    this.currentindex = this.currentindex + 1;
+    return this.book[this.currentindex];
   }
   changeCurrentBook(ele){
-    this.cindex = ele;
-    return this.cindex
+    this.currentindex = ele;
+    return this.currentindex;
   }
 }
 #### BookList Methods
