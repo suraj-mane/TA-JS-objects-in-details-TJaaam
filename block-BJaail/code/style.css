@@ -1,0 +1,56 @@
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+h1 {
+  text-align: center;
+  padding: 10px 0;
+  font-size: 3rem;
+  font-weight: 200;
+}
+h1 i {
+  color: cornflowerblue;
+}
+h1 span {
+  color: cornflowerblue;
+}
+input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  font-weight: 500;
+}
+button {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border: none;
+  background-color: cornflowerblue;
+  color: white;
+  font-size: 1.2rem;
+}
+.lu{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-bottom: 2px solid cornflowerblue;
+}
+li {
+  list-style: none;
+  display: inline; 
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.list {
+  display: inline;
+  font-size: 1.2rem;
+  font-weight: 200; 
+}
+.check{
+  width: 10%;
+}
+.demo{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
