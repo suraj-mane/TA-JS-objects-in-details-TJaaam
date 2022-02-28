@@ -1,0 +1,27 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+header {
+  background-color: coral;
+  padding: 10px 0;
+}
+.brand {
+  text-align: center;
+  color: white;
+}
+.brand span {
+  color: cornflowerblue;
+}
+.main-que {
+  list-style: none;
+  margin: 20px 0;
+}
+.question {
+  display: inline;
+  font-size: 30px;
+  font-weight: 600;
+}
+.selecet {
+  width: 10px;
+}
